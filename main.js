@@ -133,11 +133,14 @@ const removeAllElements = elements => {
   const copyToClipboard = e => {
     // EXERCISE: set all constants at once
       // 1. the element on which the click event occurred
-
+        const 
+        emojiElem = e.target;
       // 2. check if there's a hidden input field injected beside this emoji already
-
+        hiddenField = 
+        emojiElem.parentElement.getElementsByClassName('copy--input')[0],
+        input = (hiddenField? hiddenField: null);
       // 3 + 4. this message will show up when an emoji is copied
-
+        copiedMessage = `${emojiElem.innerHTML} is copied!`;
       // BONUS: now go back and find all the fat arrow functions that only take in one parameter, and remove the brackets.
 
 
