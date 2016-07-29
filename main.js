@@ -59,7 +59,16 @@ const removeClass = (el, oldClass) => {
 
   // 1. Set variable for old emojis
   // 2. Remove class: visible
-
+  for (const emoji of matchedEmojiTitles) {
+    const emojiItem = 
+    document.querySelector('[title="${emoji}"]');
+    
+    if (emojiItem) {
+      addClass(emojiItem.parentElement, 'visible');
+    }
+  }
+  
+  addClass(siteContainer, 'filtering');
   // Remove class: filtering from siteContainer when input is cleared
 })();
 
