@@ -17,6 +17,21 @@
     // 1. Compare value against emojis
     // 2. Verify that we got emojis based off the value
     // 3. Add matched emojis to matchedEmojiTitles
+    
+    let matchedEmojiTitles = [];
+    const matchedObjects = 
+    EMOJIS.filter(filterByKeyword.bind(this, value));
+    
+    if (matchedObjects.length == 0) return;
+
+    matchedObjects.map((obj) => {
+    matchedEmojiTitles.push(obj.keywords[0]);
+  }
+  
+  const filterByKeyword = (value, obj) => {
+    return object.keywords.some((keyword) => {
+      return value === keyword;
+    });
   }
 
   const delay = (func, delay) => {
